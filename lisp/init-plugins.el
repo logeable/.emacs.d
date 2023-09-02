@@ -92,5 +92,11 @@
   (setq company-selection-wrap-around t)
   (setq company-transformers '(company-sort-by-occurrence)))
 
+(use-package flycheck
+  :ensure t
+  :config
+  (setq truncate-lines nil)
+  :hook
+  (prog-mode . flycheck-mode))
 
 (provide 'init-plugins)
