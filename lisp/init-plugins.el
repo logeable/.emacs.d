@@ -150,4 +150,7 @@
   :after (projectile)
   :init (counsel-projectile-mode))
 
+(use-package magit
+  :ensure t)
+
 (provide 'init-plugins)

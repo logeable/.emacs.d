@@ -7,3 +7,4 @@ custom.el
 .lsp-session-v1
 .dap-breakpoints
 projectile-bookmarks.eld
+transient/
