@@ -22,10 +22,18 @@
 (use-package which-key
   :ensure t
   :init
-  (which-key-mode 1))
+  (which-key-mode))
 
 (use-package avy
   :ensure
   :bind
   (("C-j C-SPC" . avy-goto-char-timer)))
+
+(use-package marginalia
+  :ensure t
+  :init
+  (marginalia-mode)
+  :bind
+  (:map minibuffer-local-map
+	("M-A" . marginalia-cycle)))
 (provide 'init-plugins)
