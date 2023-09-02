@@ -5,6 +5,8 @@
 ;; a number of other files.
 
 ;;; Code:
+(add-to-list 'default-frame-alist '(height . 45))
+(add-to-list 'default-frame-alist '(width . 140))
 
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
