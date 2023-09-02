@@ -73,4 +73,11 @@
                  nil
                  (window-parameters (mode-line-format . none)))))
 
+(use-package dashboard
+  :ensure t
+  :config
+  (setq initial-buffer-choice (lambda () (get-buffer-create "*dashboard*")))
+  (dashboard-setup-startup-hook))
+
+
 (provide 'init-plugins)
