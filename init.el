@@ -30,6 +30,7 @@
   :custom
   (straight-use-package-by-default t))
 
+(require 'init-keys)
 (require 'init-defaults)
 (require 'init-plugins)
 (require 'init-theme)

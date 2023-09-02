@@ -13,7 +13,19 @@
   :bind
   (("C-s" . 'swiper)
    ("C-x b" . 'ivy-switch-buffer)
+   ("C-c v" . 'ivy-push-view)
+   ("C-c s" . 'ivy-switch-view)
+   ("C-c V" . 'ivy-pop-view)
    :map minibuffer-local-map
    ("C-r" . counsel-minibuffer-history)))
 
+(use-package which-key
+  :ensure t
+  :init
+  (which-key-mode 1))
+
+(use-package avy
+  :ensure
+  :bind
+  (("C-j C-SPC" . avy-goto-char-timer)))
 (provide 'init-plugins)
