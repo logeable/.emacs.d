@@ -4,3 +4,5 @@ history
 straight
 bookmarks
 custom.el
+.lsp-session-v1
+.dap-breakpoints
