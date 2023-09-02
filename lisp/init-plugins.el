@@ -78,6 +78,9 @@
   :ensure t
   :config
   (setq initial-buffer-choice (lambda () (get-buffer-create "*dashboard*")))
+  (setq dashboard-items '((recents  . 5)   ;; 显示多少个最近文件
+			  (bookmarks . 5)  ;; 显示多少个最近书签
+			  (projects . 10))) ;; 显示多少个最近项目
   (dashboard-setup-startup-hook))
 
 (use-package company
@@ -134,5 +137,17 @@
   :hook ((go-mode . lsp-deferred)
          (before-save . lsp-format-buffer)
          (before-save . lsp-organize-imports)))
+
+(use-package projectile
+  :ensure t
+  :bind (("C-c p" . projectile-command-map))
+  :config
+  (setq projectile-mode-line "Projectile")
+  (setq projectile-track-known-projects-automatically nil))
+
+(use-package counsel-projectile
+  :ensure t
+  :after (projectile)
+  :init (counsel-projectile-mode))
 
 (provide 'init-plugins)
