@@ -11,6 +11,8 @@
 (require 'init-keys)
 (require 'init-defaults)
 (require 'init-plugins)
+(require 'init-org)
 (require 'init-theme)
+
 (require 'init-custom)
 ;;; init.el ends here
