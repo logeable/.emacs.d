@@ -2,7 +2,6 @@
 ;;; Commentary:
 
 ;;; Code:
-(load-theme 'misterioso)
 
 (provide 'init-ui)
 

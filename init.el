@@ -12,7 +12,7 @@
 (require 'init-defaults)
 (require 'init-plugins)
 (require 'init-org)
-(require 'init-theme)
+(require 'init-ui)
 
 (require 'init-custom)
 ;;; init.el ends here
