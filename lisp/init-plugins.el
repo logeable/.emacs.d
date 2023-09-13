@@ -222,6 +222,9 @@
 (use-package restart-emacs
   :ensure t)
 
+(use-package rg
+  :ensure t)
+
 (provide 'init-plugins)
 ;;; init-plugins.el ends here
 
