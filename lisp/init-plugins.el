@@ -1,4 +1,6 @@
-;; -*- lexical-binding: t; -*-
+;;; init-plugins.el --- init plugins                -*- lexical-binding: t; -*-
+;;; Commentary:
+;;; Code:
 (use-package counsel
   :ensure t)
 
@@ -112,6 +114,8 @@
          (go-mode . lsp)
          ;; if you want which-key integration
          (lsp-mode . lsp-enable-which-key-integration))
+  :custom
+  (lsp-enable-snippet t)
   :commands (lsp lsp-deferred))
 
 ;; optionally
@@ -131,7 +135,8 @@
   :commands lsp-treemacs-errors-list)
 
 ;; optionally if you want to use debugger
-(use-package dap-mode)
+(use-package dap-mode
+  :ensure t)
 ;; (use-package dap-LANGUAGE) to load the dap adapter for your language
 
 (use-package go-mode
@@ -198,12 +203,25 @@
   :ensure t
   :after (treemacs projectile))
 
-(use-package all-the-icons)
+(use-package yasnippet
+  :ensure t
+  :hook
+  (prog-mode . yas-minor-mode))
+
+(use-package yasnippet-snippets
+  :ensure t)
+
+(use-package all-the-icons
+  :ensure t)
 
 (use-package org-bullets
   :ensure t
   :hook
   (org-mode . org-bullets-mode))
 
+(use-package restart-emacs
+  :ensure t)
 
 (provide 'init-plugins)
+;;; init-plugins.el ends here
+
