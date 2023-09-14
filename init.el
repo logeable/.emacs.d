@@ -8,8 +8,8 @@
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
 (require 'init-elpa)
-(require 'init-keys)
 (require 'init-defaults)
+(require 'init-keys)
 (require 'init-plugins)
 (require 'init-org)
 (require 'init-ui)

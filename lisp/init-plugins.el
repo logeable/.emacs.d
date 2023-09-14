@@ -136,7 +136,8 @@
 
 ;; optionally if you want to use debugger
 (use-package dap-mode
-  :ensure t)
+  :ensure t
+  :defer t)
 ;; (use-package dap-LANGUAGE) to load the dap adapter for your language
 
 (use-package go-mode
@@ -158,7 +159,8 @@
   :init (counsel-projectile-mode))
 
 (use-package magit
-  :ensure t)
+  :ensure t
+  :defer t)
 
 (use-package rust-mode
   :ensure t
@@ -209,7 +211,8 @@
   (prog-mode . yas-minor-mode))
 
 (use-package yasnippet-snippets
-  :ensure t)
+  :ensure t
+  :defer t)
 
 (use-package all-the-icons
   :ensure t)
