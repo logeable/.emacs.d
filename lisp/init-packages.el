@@ -16,6 +16,11 @@
 
 ;; packages
 
+(use-package benchmark-init
+  :config
+  ;; To disable collection of benchmark data after init is done.
+  (add-hook 'after-init-hook 'benchmark-init/deactivate))
+
 (use-package ivy
   :config
   (ivy-mode 1))
@@ -80,5 +85,13 @@
 
 (use-package lsp-ui
   :commands lsp-ui-mode)
+
+(use-package dashboard
+  :init
+  (setq dashboard-items '((recents   . 5)
+			  (projects  . 5)
+			  (bookmarks . 5)))
+  :config
+  (dashboard-setup-startup-hook))
 
 (provide 'init-packages)
