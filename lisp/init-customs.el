@@ -5,4 +5,7 @@
   (write-region "" nil custom-file))
 (load custom-file)
 
+(global-display-line-numbers-mode 1)
+(tool-bar-mode -1)
+
 (provide 'init-customs)
