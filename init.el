@@ -1,4 +1,6 @@
- (require 'package)
+;; -*- lexical-binding: t; -*-
+
+(require 'package)
 (setq package-archives '(("gnu"    . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
                          ("nongnu" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/nongnu/")
                          ("melpa"  . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")))
@@ -51,3 +53,32 @@
   :if (memq window-system '(mac ns))
   :config
   (exec-path-from-shell-initialize))
+
+(use-package vterm)
+
+(use-package evil
+  :config
+  (evil-mode 1))
+
+(use-package go-mode
+  :init
+  :config
+  (setq gofmt-command "goimports")
+  (add-hook 'go-mode-hook
+	    (lambda ()
+	      (add-hook 'before-save-hook 'gofmt-before-save))))
+
+(use-package rust-mode
+  :config
+  (setq rust-format-on-save t))
+
+(use-package lsp-mode
+  :hook
+  ((go-mode . lsp)
+   (rust-mode . lsp)
+   (lsp-mode . lsp-enable-which-key-integration))
+  :commands lsp)
+
+(use-package lsp-ui
+  :commands lsp-ui-mode)
+
