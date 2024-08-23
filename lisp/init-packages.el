@@ -87,6 +87,9 @@
 (use-package lsp-ui
   :commands lsp-ui-mode)
 
+(use-package lsp-ivy
+  :commands lsp-ivy-workspace-symbol)
+
 (use-package dashboard
   :init
   (setq dashboard-items '((recents   . 10)
