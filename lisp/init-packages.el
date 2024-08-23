@@ -6,9 +6,7 @@
                          ("melpa"  . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")))
 (package-initialize)
 
-(unless (package-installed-p 'use-package)
-  (package-refresh-conjtents)
-  (package-install 'use-package))
+(package-refresh-contents t)
 
 (require 'use-package)
 (require 'use-package-ensure)
@@ -81,6 +79,9 @@
   ((go-mode . lsp)
    (rust-mode . lsp)
    (lsp-mode . lsp-enable-which-key-integration))
+  :init
+  (setq lsp-completion-enable t)
+  (setq lsp-enable-snippet t)
   :commands lsp)
 
 (use-package lsp-ui
@@ -88,10 +89,13 @@
 
 (use-package dashboard
   :init
-  (setq dashboard-items '((recents   . 5)
-			  (projects  . 5)
-			  (bookmarks . 5)))
+  (setq dashboard-items '((recents   . 10)
+			  (projects  . 5)))
   :config
   (dashboard-setup-startup-hook))
+
+(use-package dracula-theme
+  :config
+  (load-theme 'dracula t))
 
 (provide 'init-packages)

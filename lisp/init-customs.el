@@ -7,5 +7,6 @@
 
 (global-display-line-numbers-mode 1)
 (tool-bar-mode -1)
+(setq-default tab-width 4)
 
 (provide 'init-customs)
