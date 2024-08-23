@@ -57,10 +57,13 @@
   (exec-path-from-shell-initialize))
 
 (use-package vterm)
+(use-package vterm-toggle
+  :bind ("s-t" . vterm-toggle))
 
 (use-package evil
   :config
-  (evil-mode 1))
+  (evil-mode 1)
+  (evil-set-initial-state 'vterm-mode 'emacs))
 
 (use-package go-mode
   :init
@@ -82,6 +85,7 @@
   :init
   (setq lsp-completion-enable t)
   (setq lsp-enable-snippet t)
+  (setq lsp-inlay-hint-enable t)
   :commands lsp)
 
 (use-package lsp-ui
