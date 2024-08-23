@@ -8,6 +8,7 @@
 (global-display-line-numbers-mode 1)
 (tool-bar-mode -1)
 (setq-default tab-width 4)
+(setq make-backup-files nil)
 (global-hl-line-mode t)
 
 (provide 'init-customs)
