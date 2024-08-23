@@ -101,4 +101,9 @@
   :config
   (load-theme 'dracula t))
 
+(use-package neotree)
+
+(use-package rainbow-delimiters
+  :hook (prog-mode . rainbow-delimiters-mode))
+
 (provide 'init-packages)
